@@ -20,19 +20,18 @@ class ImageTableViewCell: UITableViewCell {
         super.awakeFromNib()
         profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
         profileImageView.contentMode = .scaleAspectFill
-        
         featureImageView.contentMode = .scaleAspectFill
     }
     
     //  MARK: - PROPERTIES
     var unsplashImage: UnsplashImage? {
         didSet {
-            fetchImageAndUpdateView()
+            fetchImagesAndUpdateView()
         }
     }
     
     //  MARK: - METHODS
-    func fetchImageAndUpdateView() {
+    func fetchImagesAndUpdateView() {
         guard let unsplashImage = unsplashImage else { return }
         dimensionsLabel.text = "\(unsplashImage.width) x \(unsplashImage.height)"
         usernameLabel.text = unsplashImage.user.username

@@ -25,11 +25,9 @@ class ImageSearchViewController: UIViewController {
         searchForImages(with: "bike")
     }
     
-    //  MARK: - ACTIONS
-    
     //  MARK: - METHODS
     func searchForImages(with searchTerm: String) {
-        UnsplashController.fetchImages(with: searchTerm) { result in
+        UnsplashController.fetchUnsplashImages(with: searchTerm) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let unsplashImages):

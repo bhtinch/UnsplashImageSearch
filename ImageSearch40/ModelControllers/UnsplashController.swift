@@ -19,7 +19,7 @@ struct UnsplashController {
     
     private static let accessKey = "Qrbk21eQnxBNYPrRBVlYcbzbecpRcvA3jvT_NYasvUA"
     
-    static func fetchImages(with searchTerm: String, completion: @escaping(Result<[UnsplashImage], NetworkError>) -> Void ) {
+    static func fetchUnsplashImages(with searchTerm: String, completion: @escaping(Result<[UnsplashImage], NetworkError>) -> Void ) {
         guard let baseURL = UnsplashConstants.baseURL else { return }
         
         let photoSearchEndpointURL = baseURL.appendingPathComponent(UnsplashConstants.photoSearchEndpoint)
