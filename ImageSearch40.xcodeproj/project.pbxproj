@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		62551EF226BC4700000918F0 /* UnsplashColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62551EF126BC4700000918F0 /* UnsplashColors.swift */; };
 		62551EF426BC51BC000918F0 /* ImageSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62551EF326BC51BC000918F0 /* ImageSearchViewController.swift */; };
 		62551EF626BC52FB000918F0 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62551EF526BC52FB000918F0 /* ImageTableViewCell.swift */; };
-		62551EFA26BC5DA4000918F0 /* HexColorConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62551EF926BC5DA4000918F0 /* HexColorConverter.swift */; };
 		62E5127926BB2CB700C412E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E5127826BB2CB700C412E8 /* AppDelegate.swift */; };
 		62E5127B26BB2CB700C412E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E5127A26BB2CB700C412E8 /* SceneDelegate.swift */; };
 		62E5128026BB2CB700C412E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62E5127E26BB2CB700C412E8 /* Main.storyboard */; };
@@ -22,10 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		62551EF126BC4700000918F0 /* UnsplashColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashColors.swift; sourceTree = "<group>"; };
 		62551EF326BC51BC000918F0 /* ImageSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchViewController.swift; sourceTree = "<group>"; };
 		62551EF526BC52FB000918F0 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
-		62551EF926BC5DA4000918F0 /* HexColorConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColorConverter.swift; sourceTree = "<group>"; };
 		62E5127526BB2CB700C412E8 /* ImageSearch40.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageSearch40.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62E5127826BB2CB700C412E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62E5127A26BB2CB700C412E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,8 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				62E5129726BB57B400C412E8 /* NetworkError.swift */,
-				62551EF126BC4700000918F0 /* UnsplashColors.swift */,
-				62551EF926BC5DA4000918F0 /* HexColorConverter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -211,8 +205,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62551EF226BC4700000918F0 /* UnsplashColors.swift in Sources */,
-				62551EFA26BC5DA4000918F0 /* HexColorConverter.swift in Sources */,
 				62551EF626BC52FB000918F0 /* ImageTableViewCell.swift in Sources */,
 				62E5127926BB2CB700C412E8 /* AppDelegate.swift in Sources */,
 				62E5127B26BB2CB700C412E8 /* SceneDelegate.swift in Sources */,

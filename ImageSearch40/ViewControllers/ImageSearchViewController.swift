@@ -11,13 +11,9 @@ class ImageSearchViewController: UIViewController {
     //  MARK: - OUTLETS
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var orientationPickerView: UIPickerView!
     
     //  MARK: - PROPERTIES
     var unsplashImages: [UnsplashImage] = []
-    var searchTerm = "bike"
-    var color: String?
-    var orientation: String?
 
     //  MARK: - LILFECYCLES
     override func viewDidLoad() {
@@ -25,13 +21,15 @@ class ImageSearchViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
+        
+        searchForImages(with: "bike")
     }
     
     //  MARK: - ACTIONS
     
     //  MARK: - METHODS
-    func searchForImages(with searchTerm: String, color: String?, orientation: String?) {
-        UnsplashController.fetchImages(with: searchTerm, color: color, orientation: orientation) { result in
+    func searchForImages(with searchTerm: String) {
+        UnsplashController.fetchImages(with: searchTerm) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let unsplashImages):
@@ -65,6 +63,6 @@ extension ImageSearchViewController: UITableViewDelegate, UITableViewDataSource 
 extension ImageSearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchTerm = searchBar.text, !searchTerm.isEmpty else { return }
-        searchForImages(with: searchTerm, color: color, orientation: orientation)
+        searchForImages(with: searchTerm)
     }
 }

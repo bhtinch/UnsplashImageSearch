@@ -12,19 +12,14 @@ enum UnsplashConstants {
     static let baseURL = URL(string: "https://api.unsplash.com")
     static let photoSearchEndpoint = "search/photos"
     static let clientIDKey = "client_id"
-    
-    enum photoSearchParameters {
-        static let query = "query"
-        static let color = "color"
-        static let orientation = "orientation"
-    }
+    static let queryKey = "query"
 }
 
 struct UnsplashController {
     
     private static let accessKey = "Qrbk21eQnxBNYPrRBVlYcbzbecpRcvA3jvT_NYasvUA"
     
-    static func fetchImages(with searchTerm: String, color: String?, orientation: String?, completion: @escaping(Result<[UnsplashImage], NetworkError>) -> Void ) {
+    static func fetchImages(with searchTerm: String, completion: @escaping(Result<[UnsplashImage], NetworkError>) -> Void ) {
         guard let baseURL = UnsplashConstants.baseURL else { return }
         
         let photoSearchEndpointURL = baseURL.appendingPathComponent(UnsplashConstants.photoSearchEndpoint)
@@ -32,11 +27,9 @@ struct UnsplashController {
         var components = URLComponents(url: photoSearchEndpointURL, resolvingAgainstBaseURL: true)
         
         let accessQuery = URLQueryItem(name: UnsplashConstants.clientIDKey, value: accessKey)
-        let colorQuery = URLQueryItem(name: UnsplashConstants.photoSearchParameters.color, value: color)
-        let orientationQuery = URLQueryItem(name: UnsplashConstants.photoSearchParameters.orientation, value: orientation)
-        let searchTermQuery = URLQueryItem(name: UnsplashConstants.photoSearchParameters.query, value: searchTerm)
+        let searchTermQuery = URLQueryItem(name: UnsplashConstants.queryKey, value: searchTerm)
         
-        components?.queryItems = [accessQuery, colorQuery, orientationQuery, searchTermQuery]
+        components?.queryItems = [accessQuery, searchTermQuery]
         
         guard let finalURL = components?.url else { return completion(.failure(.invalidURL)) }
         

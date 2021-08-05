@@ -37,9 +37,8 @@ class ImageTableViewCell: UITableViewCell {
         dimensionsLabel.text = "\(unsplashImage.width) x \(unsplashImage.height)"
         usernameLabel.text = unsplashImage.user.username
         likesLabel.text = String(unsplashImage.likes)
-        //infoStackView.backgroundColor = UIColor(hex: unsplashImage.color)
         
-        UnsplashController.fetchImage(with: unsplashImage.urls.thumbnailURL) { result in
+        UnsplashController.fetchImage(with: unsplashImage.urls.regularURL) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let image):

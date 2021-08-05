@@ -14,17 +14,16 @@ struct UnsplashTopLevel: Codable {
 struct UnsplashImage: Codable {
     let width: Int
     let height: Int
-    let color: String
     let likes: Int
     let urls: UnsplashImageURLs
     let user: UnsplashUser
 }
 
 struct UnsplashImageURLs: Codable {
-    let thumbnailURL: URL
+    let regularURL: URL
     
     enum CodingKeys: String, CodingKey {
-        case thumbnailURL = "thumb"
+        case regularURL = "regular"
     }
 }
 
