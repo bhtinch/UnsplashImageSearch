@@ -22,6 +22,8 @@ class ImageSearchViewController: UIViewController {
         tableView.dataSource = self
         searchBar.delegate = self
         
+        searchBar.searchTextField.textColor = .white
+        
         searchForImages(with: "bike")
     }
     

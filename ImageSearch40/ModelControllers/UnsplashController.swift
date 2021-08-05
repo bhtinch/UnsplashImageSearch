@@ -16,6 +16,7 @@ enum UnsplashConstants {
 }
 
 struct UnsplashController {
+    static let cache = NSCache<NSString, UIImage>()
     
     private static let accessKey = "Qrbk21eQnxBNYPrRBVlYcbzbecpRcvA3jvT_NYasvUA"
     
@@ -56,6 +57,13 @@ struct UnsplashController {
     }
     
     static func fetchImage(with url: URL, completion: @escaping(Result<UIImage, NetworkError>) -> Void ) {
+        
+        if let image = cache.object(forKey: NSString(string: url.absoluteString)) {
+            return completion(.success(image))
+        }
+        
+        print("fetching")
+        
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
                 print("***Error*** in Function: \(#function)\n\nError: \(error)\n\nDescription: \(error.localizedDescription)")
@@ -65,6 +73,10 @@ struct UnsplashController {
             guard let data = data else { return completion(.failure(.noData)) }
             
             guard let image = UIImage(data: data) else { return completion(.failure(.noImage)) }
+            
+            let cacheKey = NSString(string: url.absoluteString)
+            self.cache.setObject(image, forKey: cacheKey)
+            
             completion(.success(image))
         }
         

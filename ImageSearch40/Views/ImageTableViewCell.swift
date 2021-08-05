@@ -61,4 +61,10 @@ class ImageTableViewCell: UITableViewCell {
             }
         }
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        featureImageView.image = nil
+        profileImageView.image = nil
+    }
 }
