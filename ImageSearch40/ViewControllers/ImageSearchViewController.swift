@@ -93,7 +93,7 @@ class ImageSearchViewController: UIViewController {
     }
     
     func searchForImages(with searchTerm: String, color: String?, orientation: String?) {
-        UnsplashController.fetchImages(with: searchTerm, color: color, orientation: orientation) { result in
+        UnsplashController.fetchUnsplashImages(with: searchTerm, color: color, orientation: orientation) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let unsplashImages):
