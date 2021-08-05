@@ -18,10 +18,9 @@ class ImageTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
-        profileImageView.contentMode = .scaleAspectFill
-        
         featureImageView.contentMode = .scaleAspectFill
+        profileImageView.contentMode = .scaleAspectFill
+        profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
     }
     
     //  MARK: - PROPERTIES
@@ -37,7 +36,9 @@ class ImageTableViewCell: UITableViewCell {
         dimensionsLabel.text = "\(unsplashImage.width) x \(unsplashImage.height)"
         usernameLabel.text = unsplashImage.user.username
         likesLabel.text = String(unsplashImage.likes)
-        //infoStackView.backgroundColor = UIColor(hex: unsplashImage.color)
+        
+        infoStackView.backgroundColor = UIColor(hex: unsplashImage.color)
+        self.backgroundColor = UIColor(hex: unsplashImage.color)
         
         UnsplashController.fetchImage(with: unsplashImage.urls.regularURL) { result in
             DispatchQueue.main.async {
