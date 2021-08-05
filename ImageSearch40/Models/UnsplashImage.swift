@@ -21,10 +21,10 @@ struct UnsplashImage: Codable {
 }
 
 struct UnsplashImageURLs: Codable {
-    let thumbnailURL: URL
+    let regularURL: URL
     
     enum CodingKeys: String, CodingKey {
-        case thumbnailURL = "thumb"
+        case regularURL = "regular"
     }
 }
 

@@ -15,7 +15,6 @@ class ImageSearchViewController: UIViewController {
     
     //  MARK: - PROPERTIES
     var unsplashImages: [UnsplashImage] = []
-    var searchTerm = "bike"
     var color: String?
     var orientation: String?
 
@@ -25,6 +24,8 @@ class ImageSearchViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
+        
+        searchForImages(with: "bike", color: UnsplashColors.blue.rawValue, orientation: nil)
     }
     
     //  MARK: - ACTIONS
