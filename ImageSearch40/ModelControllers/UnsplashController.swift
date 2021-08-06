@@ -62,8 +62,6 @@ struct UnsplashController {
             return completion(.success(image))
         }
         
-        print("fetching")
-        
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
                 print("***Error*** in Function: \(#function)\n\nError: \(error)\n\nDescription: \(error.localizedDescription)")
